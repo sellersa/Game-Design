@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhvdlbnpc6pct"]
+
+[ext_resource type="Script" path="res://HelloWorld.gd" id="1_r7qbn"]
+
+[node name="HelloWorld" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = -16.0
+offset_right = 43.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r7qbn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 63.0
+offset_right = 813.0
+offset_bottom = 322.0
+rotation = 0.000264704
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnShow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 436.0
+offset_right = 293.0
+offset_bottom = 592.0
+text = "Show"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 433.0
+offset_right = 647.0
+offset_bottom = 589.0
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 829.0
+offset_top = 439.0
+offset_right = 1035.0
+offset_bottom = 595.0
+text = "Exit"
+
+[connection signal="pressed" from="btnShow" to="." method="_on_btn_show_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
