@@ -1,9 +1,6 @@
 extends Control
 
 
-
-
-
 func _on_btn_show_pressed():
 	$Label.text = "Minecraft Club"
 
