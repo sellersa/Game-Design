@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn7lemg3p3fh5"]
+
+[ext_resource type="Script" path="res://My Name.gd" id="1_py6gj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1p0db"]
+font_size = 88
+
+[node name="My Name" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_py6gj")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 448.0
+offset_right = 288.0
+offset_bottom = 576.0
+text = "Calculate"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 424.0
+offset_top = 448.0
+offset_right = 672.0
+offset_bottom = 576.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 824.0
+offset_top = 448.0
+offset_right = 1072.0
+offset_bottom = 576.0
+text = "Close"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 64.0
+offset_right = 944.0
+offset_bottom = 360.0
+label_settings = SubResource("LabelSettings_1p0db")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
