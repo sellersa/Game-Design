@@ -33,6 +33,7 @@ offset_bottom = 624.0
 text = "Calculate"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 432.0
 offset_top = 448.0
 offset_right = 688.0
@@ -40,6 +41,7 @@ offset_bottom = 624.0
 text = "Clear"
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 816.0
 offset_top = 448.0
 offset_right = 1080.0

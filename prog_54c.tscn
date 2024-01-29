@@ -23,6 +23,7 @@ offset_bottom = 424.0
 text = "Calculate"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 856.0
 offset_top = 40.0
 offset_right = 944.0
@@ -52,6 +53,7 @@ text = "Diameter:"
 label_settings = SubResource("LabelSettings_xiq2u")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 248.0
 offset_right = 180.0
@@ -73,6 +75,7 @@ text = "Area:"
 label_settings = SubResource("LabelSettings_xiq2u")
 
 [node name="Label4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 390.0
 offset_right = 242.0
@@ -91,18 +94,21 @@ offset_right = 471.744
 offset_bottom = 55.248
 
 [node name="Label5" type="Label" parent="."]
+layout_mode = 0
 offset_left = 407.0
 offset_top = 272.0
 offset_right = 521.0
 offset_bottom = 298.0
 
 [node name="Label6" type="Label" parent="."]
+layout_mode = 0
 offset_left = 407.0
 offset_top = 328.0
 offset_right = 521.0
 offset_bottom = 354.0
 
 [node name="Label7" type="Label" parent="."]
+layout_mode = 0
 offset_left = 407.0
 offset_top = 400.0
 offset_right = 521.0
