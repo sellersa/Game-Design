@@ -25,6 +25,7 @@ offset_right = 1152.0
 offset_bottom = 192.0
 
 [node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
 offset_left = 768.0
 offset_top = 216.0
 offset_right = 1152.0
@@ -40,6 +41,7 @@ text = "Enter speed limit:"
 label_settings = SubResource("LabelSettings_pew8n")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 200.0
 offset_right = 900.0
@@ -48,6 +50,7 @@ text = "Enter vehicle speed:"
 label_settings = SubResource("LabelSettings_pew8n")
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 160.0
 offset_top = 344.0
 offset_right = 1028.0
@@ -68,6 +71,7 @@ offset_bottom = 568.248
 text = "Calculate"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 440.0
 offset_top = 504.0
 offset_right = 752.0

@@ -27,6 +27,7 @@ offset_bottom = 608.0
 text = "Calculate"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 520.0
 offset_right = 712.0
@@ -34,6 +35,7 @@ offset_bottom = 608.0
 text = "Clear"
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 816.0
 offset_top = 520.0
 offset_right = 1080.0
@@ -50,6 +52,7 @@ text = "Enter a number you despise (1-9):"
 label_settings = SubResource("LabelSettings_4abm7")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 464.0
 offset_top = 144.0
 offset_right = 632.0
