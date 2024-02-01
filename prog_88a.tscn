@@ -23,6 +23,7 @@ offset_bottom = 160.0
 alignment = 1
 
 [node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
 offset_left = 768.0
 offset_top = 24.0
 offset_right = 896.0
@@ -38,6 +39,7 @@ offset_bottom = 552.0
 text = "Calculate"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 368.0
 offset_top = 560.0
 offset_right = 648.0
@@ -45,6 +47,7 @@ offset_bottom = 640.0
 text = "Clear"
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 640.0
 offset_top = 472.0
 offset_right = 920.0
