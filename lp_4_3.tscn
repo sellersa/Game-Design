@@ -26,6 +26,7 @@ offset_bottom = 578.0
 text = "Calculate"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 448.0
 offset_right = 704.0
@@ -33,6 +34,7 @@ offset_bottom = 578.0
 text = "Clear"
 
 [node name="Button3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 832.0
 offset_top = 448.0
 offset_right = 1088.0
@@ -50,6 +52,7 @@ text = "Enter number of eggs purchased:
 label_settings = SubResource("LabelSettings_sw3kk")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 192.0
 offset_top = 216.0
 offset_right = 960.0
