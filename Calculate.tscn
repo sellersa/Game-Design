@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://btouxl16kpb3w"]
+[gd_scene load_steps=3 format=3 uid="uid://c2pobdnmqst6a"]
 
-[ext_resource type="Script" path="res://It'sCalculatingTime.gd" id="1_klgms"]
+[ext_resource type="Script" path="res://It'sCalculatingTime.gd" id="1_37yq2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ydnun"]
 font_size = 50
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_klgms")
+script = ExtResource("1_37yq2")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 0
