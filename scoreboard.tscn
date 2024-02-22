@@ -25,6 +25,7 @@ offset_bottom = 608.0
 text = "Update"
 
 [node name="Button2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 896.0
 offset_top = 480.0
 offset_right = 1152.0

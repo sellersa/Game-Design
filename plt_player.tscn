@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfnuvcv6tujnk"]
+
+[ext_resource type="Script" path="res://plt_player.gd" id="1_u58dh"]
+
+[node name="plt_player" type="CharacterBody2D"]
+script = ExtResource("1_u58dh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

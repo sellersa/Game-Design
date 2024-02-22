@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://vx2y70i23cr"]
+
+[ext_resource type="Script" path="res://plt_world.gd" id="1_wnn2k"]
+[ext_resource type="PackedScene" uid="uid://bfnuvcv6tujnk" path="res://plt_player.tscn" id="2_sv3wx"]
+[ext_resource type="Script" path="res://plt_enemy.gd" id="3_w0wa8"]
+
+[node name="plt_world1" type="Node2D"]
+script = ExtResource("1_wnn2k")
+
+[node name="world" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
+polygon = PackedVector2Array(16, 16, 32, 104, 80, 256, 184, 280, 280, 216, 344, 240, 424, 216, 504, 256, 600, 272, 680, 256, 696, 168, 712, 136, 744, 136, 760, 168, 840, 264, 968, 256, 1032, 264, 1032, 216, 1048, 200, 1048, 0, 1096, 296, 816, 288, 568, 320, 352, 280, 128, 328, 0, 264, -24, 24)
+
+[node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
+
+[node name="plt_player" parent="." instance=ExtResource("2_sv3wx")]
+
+[node name="plt_enemy" type="RigidBody2D" parent="."]
+script = ExtResource("3_w0wa8")
+
+[node name="starting platform" type="StaticBody2D" parent="."]
+position = Vector2(112, 320)
+
+[node name="draggable" type="RigidBody2D" parent="."]
+position = Vector2(609, 211)
+freeze = true
+
+[node name="ColorRect" type="ColorRect" parent="draggable"]
+offset_left = -313.0
+offset_top = -99.0
+offset_right = -281.0
+offset_bottom = -67.0
+color = Color(0.321569, 0.25098, 1, 1)
+
+[node name="Button" type="Button" parent="draggable/ColorRect"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 3.0
+offset_bottom = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable"]
+position = Vector2(20, 20)
