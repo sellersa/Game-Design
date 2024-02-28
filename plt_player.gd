@@ -43,7 +43,7 @@ func _physics_process(delta):
 		self.position.y += JUMP_VELOCITY / 2.0
 	if Input.is_action_just_pressed("ui_text_delete"):
 		self.position.y -= JUMP_VELOCITY / 2.0
-	if Input.is_action_just_pressed("ui_cancel")
+	if Input.is_action_just_pressed("ui_cancel"):
 		gravity_on = not gravity_on
 		
 	move_and_slide()

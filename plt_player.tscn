@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://plt_player.gd" id="1_u58dh"]
 
-[node name="plt_player" type="CharacterBody2D"]
+[node name="plt_player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_u58dh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -12,3 +12,4 @@ script = ExtResource("1_u58dh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

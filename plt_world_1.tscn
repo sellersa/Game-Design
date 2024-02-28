@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://vx2y70i23cr"]
+[gd_scene load_steps=6 format=3 uid="uid://vx2y70i23cr"]
 
 [ext_resource type="Script" path="res://plt_world.gd" id="1_wnn2k"]
 [ext_resource type="PackedScene" uid="uid://bfnuvcv6tujnk" path="res://plt_player.tscn" id="2_sv3wx"]
 [ext_resource type="Script" path="res://plt_enemy.gd" id="3_w0wa8"]
+[ext_resource type="PackedScene" uid="uid://btnd6hqummmkm" path="res://change_lvl.tscn" id="4_ymyos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75c66"]
 
 [node name="plt_world1" type="Node2D"]
 script = ExtResource("1_wnn2k")
@@ -14,13 +17,21 @@ polygon = PackedVector2Array(16, 16, 32, 104, 80, 256, 184, 280, 280, 216, 344, 
 
 [node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 
-[node name="plt_player" parent="." instance=ExtResource("2_sv3wx")]
+[node name="plt_player" parent="." groups=["Player"] instance=ExtResource("2_sv3wx")]
 
 [node name="plt_enemy" type="RigidBody2D" parent="."]
+visible = false
 script = ExtResource("3_w0wa8")
 
+[node name="Sprite2D" type="Sprite2D" parent="plt_enemy"]
+
+[node name="Timer" type="Timer" parent="plt_enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plt_enemy"]
+shape = SubResource("RectangleShape2D_75c66")
+
 [node name="starting platform" type="StaticBody2D" parent="."]
-position = Vector2(112, 320)
+position = Vector2(429, 121)
 
 [node name="draggable" type="RigidBody2D" parent="."]
 position = Vector2(609, 211)
@@ -42,3 +53,7 @@ offset_bottom = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="draggable"]
 position = Vector2(20, 20)
+
+[node name="change_lvl" parent="." instance=ExtResource("4_ymyos")]
+position = Vector2(1022, 253)
+next_level = "plt_world_2"
