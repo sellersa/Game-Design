@@ -17,7 +17,7 @@ polygon = PackedVector2Array(16, 16, 32, 104, 80, 256, 184, 280, 280, 216, 344, 
 
 [node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 
-[node name="plt_player" parent="." groups=["Player"] instance=ExtResource("2_sv3wx")]
+[node name="plt_player" parent="." instance=ExtResource("2_sv3wx")]
 
 [node name="plt_enemy" type="RigidBody2D" parent="."]
 visible = false

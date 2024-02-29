@@ -342,7 +342,7 @@ sources/0 = SubResource("TileSetAtlasSource_jv4b5")
 
 [node name="plt_world2" type="Node2D"]
 
-[node name="plt_player" parent="." groups=["Player"] instance=ExtResource("1_2yfmi")]
+[node name="plt_player" parent="." instance=ExtResource("1_2yfmi")]
 position = Vector2(170, 378)
 
 [node name="TileMap" type="TileMap" parent="."]
