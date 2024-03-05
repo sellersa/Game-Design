@@ -3,11 +3,13 @@
 [ext_resource type="Script" path="res://plt_world.gd" id="1_wnn2k"]
 [ext_resource type="PackedScene" uid="uid://bfnuvcv6tujnk" path="res://plt_player.tscn" id="2_sv3wx"]
 [ext_resource type="PackedScene" uid="uid://dvk0r6vbvj5oh" path="res://plt_enemy.tscn" id="3_6ro1k"]
-[ext_resource type="PackedScene" uid="uid://d12nud3o0pbun" path="res://draggable.tscn" id="4_8juyq"]
 [ext_resource type="PackedScene" uid="uid://btnd6hqummmkm" path="res://change_lvl.tscn" id="4_ymyos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v55op"]
 size = Vector2(86, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55yrm"]
+size = Vector2(23, 22)
 
 [node name="plt_world1" type="Node2D"]
 script = ExtResource("1_wnn2k")
@@ -38,9 +40,29 @@ offset_top = -5.0
 offset_right = 20.0
 offset_bottom = 1.0
 
-[node name="draggable" parent="." instance=ExtResource("4_8juyq")]
-position = Vector2(361, 140)
-
 [node name="change_lvl" parent="." instance=ExtResource("4_ymyos")]
 position = Vector2(1022, 253)
 next_level = "plt_world_2"
+
+[node name="draggable" type="RigidBody2D" parent="."]
+position = Vector2(159, 141)
+freeze = true
+
+[node name="ColorRect" type="ColorRect" parent="draggable"]
+offset_right = 23.0
+offset_bottom = 22.0
+color = Color(1, 0.568627, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="draggable/ColorRect"]
+layout_mode = 0
+offset_right = 23.0
+offset_bottom = 22.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="draggable"]
+position = Vector2(11.5, 11)
+shape = SubResource("RectangleShape2D_55yrm")
+
+[connection signal="button_down" from="draggable/ColorRect/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="draggable/ColorRect/Button" to="." method="_on_button_button_up"]

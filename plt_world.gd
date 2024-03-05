@@ -16,7 +16,7 @@ var offset = Vector2.ZERO
 
 
 
-func _process(delta):
+func _process(_delta):
 	if dragging:
 		$draggable.global_position = get_global_mouse_position() - offset
 

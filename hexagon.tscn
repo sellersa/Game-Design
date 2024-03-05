@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://csogr6ntxo5j2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wcxv3"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_x8nru"]
+radial_segments = 4
+rings = 5
+
+[node name="Hexagon" type="RigidBody2D"]
+position = Vector2(531, 292)
+physics_material_override = SubResource("PhysicsMaterial_wcxv3")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(-6, 0)
+scale = Vector2(77.4983, 76)
+mesh = SubResource("SphereMesh_x8nru")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-26, -33, -6, -38, 14, -33, 27, -20, 33, 0, 28, 19, 13, 33, -7, 38, -25, 33, -40, 19, -45, -1, -39, -20)
