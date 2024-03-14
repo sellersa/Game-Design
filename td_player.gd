@@ -17,6 +17,7 @@ func _physics_process(delta):
 		Input.get_axis("ui_left", "ui_right"),
 		Input.get_axis("ui_up", "ui_down")
 	)
+	update_animation(direction)
 	if direction.length() > 0:
 		look_direction = direction
 		# Scale to 1 to prevent diagonal boosts
@@ -32,4 +33,18 @@ func _physics_process(delta):
 		menu_instance.show()
 		get_tree().paused = true
 
-
+func update_animation(direction):
+	var a_name = "idle_"
+	if direction.length() > 0:
+		look_direction = direction
+		a_name = "walk_"
+	if look_direction.x != 0:
+		a_name += "side"
+		$AnimatedSprite2D.flip_h = look_direction.x < 0
+	elif look_direction.y < 0:
+		a_name += "up"
+	elif look_direction.y > 0:
+		a_name += "down"
+		
+	$AnimatedSprite2D.animation = a_name
+	$AnimatedSprite2D.play()
