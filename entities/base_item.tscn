@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://pp3px3pqdxa3"]
+
+[ext_resource type="Script" path="res://entities/base_item.gd" id="1_8wlhn"]
+[ext_resource type="Texture2D" uid="uid://ec2wlgmugih4" path="res://assets/sprites/zelda_like/objects.png" id="2_nyuog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfpia"]
+atlas = ExtResource("2_nyuog")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5ml3"]
+atlas = ExtResource("2_nyuog")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikhko"]
+atlas = ExtResource("2_nyuog")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwu7m"]
+atlas = ExtResource("2_nyuog")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wvg0x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfpia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5ml3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikhko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwu7m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3pc4"]
+
+[node name="BaseItem" type="Node2D"]
+script = ExtResource("1_8wlhn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_wvg0x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_x3pc4")
