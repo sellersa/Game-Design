@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch42xmhp2207h"]
+[gd_scene load_steps=7 format=3 uid="uid://ch42xmhp2207h"]
 
 [ext_resource type="Texture2D" uid="uid://yjlepttjthnn" path="res://assets/sprites/zelda_like/Overworld.png" id="1_5vl6h"]
 [ext_resource type="PackedScene" uid="uid://uespjv0jjgsy" path="res://td_player.tscn" id="2_k465f"]
+[ext_resource type="PackedScene" uid="uid://7f5dr6nhxmdq" path="res://entities/mini_coin.tscn" id="3_ji3bj"]
+[ext_resource type="PackedScene" uid="uid://p4oqh7kmc1xa" path="res://entities/mini_heart.tscn" id="4_vgb6t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oy0sx"]
 texture = ExtResource("1_5vl6h")
@@ -3190,3 +3192,9 @@ layer_1/tile_data = PackedInt32Array(-524279, 1441792, 9)
 
 [node name="td_player" parent="." instance=ExtResource("2_k465f")]
 position = Vector2(6, -162)
+
+[node name="mini_coin" parent="." instance=ExtResource("3_ji3bj")]
+position = Vector2(-48, -111)
+
+[node name="mini_heart" parent="." instance=ExtResource("4_vgb6t")]
+position = Vector2(15, -108)

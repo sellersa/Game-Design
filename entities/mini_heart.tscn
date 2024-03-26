@@ -1,22 +1,22 @@
 [gd_scene load_steps=9 format=3 uid="uid://p4oqh7kmc1xa"]
 
-[ext_resource type="Script" path="res://mini_heart.gd" id="1_low78"]
-[ext_resource type="Texture2D" uid="uid://ec2wlgmugih4" path="res://assets/sprites/zelda_like/objects.png" id="2_30131"]
+[ext_resource type="Script" path="res://entities/mini_heart.gd" id="1_xv10g"]
+[ext_resource type="Texture2D" uid="uid://ec2wlgmugih4" path="res://assets/sprites/zelda_like/objects.png" id="2_dorlm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5y5n0"]
-atlas = ExtResource("2_30131")
+atlas = ExtResource("2_dorlm")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gyq3"]
-atlas = ExtResource("2_30131")
+atlas = ExtResource("2_dorlm")
 region = Rect2(16, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jssyg"]
-atlas = ExtResource("2_30131")
+atlas = ExtResource("2_dorlm")
 region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cqu2s"]
-atlas = ExtResource("2_30131")
+atlas = ExtResource("2_dorlm")
 region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n57pj"]
@@ -42,7 +42,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7u1aj"]
 
 [node name="mini_heart" type="Node2D"]
-script = ExtResource("1_low78")
+script = ExtResource("1_xv10g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.5, 0.5)
