@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://7f5dr6nhxmdq"]
+[gd_scene load_steps=9 format=3 uid="uid://7f5dr6nhxmdq"]
 
 [ext_resource type="Texture2D" uid="uid://ec2wlgmugih4" path="res://assets/sprites/zelda_like/objects.png" id="1_34ioi"]
+[ext_resource type="Script" path="res://entities/mini_coin.gd" id="1_dycq5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjyh6"]
 atlas = ExtResource("1_34ioi")
@@ -41,6 +42,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_jc1n8"]
 
 [node name="mini_coin" type="Node2D"]
+script = ExtResource("1_dycq5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.5, 0.5)
