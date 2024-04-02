@@ -169,7 +169,7 @@ position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_pqdp2")
 debug_color = Color(0.823529, 0.4, 0, 0.419608)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AttackBox"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lfgnn")
 frame_progress = 0.909909
 
