@@ -18,15 +18,15 @@ func create_heart():
 func draw_hearts():
 	for heart in hearts.get_children():
 		hearts.remove_child(heart)
-	for i in range(int(player.data.max_health) / 20):
+	for i in range(int(60) / 20.0):
 		create_heart()  # 1 heart per 20 hp
 
 func _ready():
 	draw_hearts()
 
 func _process(delta):
-	$Money/Coins.text = "%03d" % player.data.money
-	var p_health = player.data.health
+	$Money/Coins.text = "%03d" % 0
+	var p_health = 60
 	var full_hearts = floor(p_health / 20)
 	var remainder = int(p_health) % 20
 	

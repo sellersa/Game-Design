@@ -13,10 +13,10 @@ enum STATES { IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING }
 	"secondaries": [],
 }
 
-var attack_direction = 0.0
 var inertia = Vector2()
 var look_direction = Vector2.DOWN  # (0, 1)
-var animation_lock = 0.0
+var attack_direction = Vector2.DOWN
+var animation_lock = 0.0  # Lock player while playing attack animation
 var damage_lock = 0.0
 var charge_time = 2.5
 var charge_start_time = 0.0
@@ -35,10 +35,10 @@ func get_direction_name():
 func attack():
 	data.state = STATES.ATTACKING
 	var dir_name = get_direction_name()
-	if dir_name == "right":
+	if dir_name == "left":
 		$AnimatedSprite2D.flip_h = 0
 	$AnimatedSprite2D.play("swipe_" + dir_name)
-	var attack_direction = look_direction
+	attack_direction = look_direction
 	var slash = slash_scene.instantiate()
 	slash.position = attack_direction * 20.0
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
@@ -52,7 +52,7 @@ func charged_attack():
 	damage_lock = 0.3
 	for i in range(9):
 		# Offset by (i-4) * 45 degrees
-		var angle = -attack_direction.angle() + (i-4) * PI / 4 #[-4, 4]
+		var angle = -attack_direction.angle() + (i-4) * PI / 4  # [-4,4]
 		var dir = Vector2(cos(angle), sin(angle))
 		var slash = slash_scene.instantiate()
 		slash.position = dir * 20
@@ -81,17 +81,18 @@ func take_damage(dmg):
 		damage_lock = 0.5
 		animation_lock = dmg * 0.005
 		# TODO: damage shader
-		if data.health <= 0.0:
+		if data.health <= 0:
 			data.state = STATES.DEAD
-			# TODO: play death anim and a sound
+			# TODO: play death animation & sound
 			await get_tree().create_timer(0.5).timeout
 			health_depleted.emit()
 		else:
-			pass # TODO: play damage sound
+			# TODO: play damage sound
+			pass
 	pass
 
 func _ready():
-	#p_HUD.show()
+
 	menu_instance = menu_scene.instantiate()
 	$Camera2D.add_child.call_deferred(menu_instance)
 	menu_instance.hide()
@@ -103,7 +104,7 @@ func _physics_process(delta):
 	if animation_lock == 0.0 and data.state != STATES.DEAD:
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
-			
+		
 		var direction = Vector2(
 			Input.get_axis("ui_left", "ui_right"),
 			Input.get_axis("ui_up", "ui_down")
@@ -123,10 +124,9 @@ func _physics_process(delta):
 	if data.state != STATES.DEAD:
 		if Input.is_action_just_pressed("ui_accept"):
 			attack()
-			# TODO: charge timer/state
 			charge_start_time = Time.get_time_dict_from_system().second
 			data.state = STATES.CHARGING
-			
+		
 		if Input.is_action_just_released("ui_accept"):
 			var cur_time = Time.get_time_dict_from_system().second
 			var charge_duration = cur_time - charge_start_time
