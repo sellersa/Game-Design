@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://p4oqh7kmc1xa"]
+[gd_scene load_steps=13 format=3 uid="uid://p4oqh7kmc1xa"]
 
 [ext_resource type="Script" path="res://entities/mini_heart.gd" id="1_xv10g"]
 [ext_resource type="Texture2D" uid="uid://ec2wlgmugih4" path="res://assets/sprites/zelda_like/objects.png" id="2_dorlm"]
@@ -19,6 +19,22 @@ region = Rect2(32, 48, 16, 16)
 atlas = ExtResource("2_dorlm")
 region = Rect2(48, 48, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpucb"]
+atlas = ExtResource("2_dorlm")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqrnc"]
+atlas = ExtResource("2_dorlm")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbj3v"]
+atlas = ExtResource("2_dorlm")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bixpl"]
+atlas = ExtResource("2_dorlm")
+region = Rect2(48, 48, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_n57pj"]
 animations = [{
 "frames": [{
@@ -33,6 +49,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cqu2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpucb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqrnc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbj3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bixpl")
 }],
 "loop": true,
 "name": &"new_animation",

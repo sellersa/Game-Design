@@ -1,10 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkftcpjims5th"]
+[gd_scene load_steps=7 format=3 uid="uid://dkftcpjims5th"]
 
 [ext_resource type="Script" path="res://player_hud.gd" id="1_dkm4m"]
-[ext_resource type="Texture2D" uid="uid://ec2wlgmugih4" path="res://assets/sprites/zelda_like/objects.png" id="2_sbf4o"]
+[ext_resource type="Texture2D" uid="uid://ec2wlgmugih4" path="res://assets/sprites/zelda_like/objects.png" id="2_at1vm"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_4ydfs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vh4sm"]
-font_size = 32
+font_size = 53
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sawxn"]
+atlas = ExtResource("2_at1vm")
+region = Rect2(0, 64, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_83dy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sawxn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="player_hud" type="CanvasLayer"]
 script = ExtResource("1_dkm4m")
@@ -16,14 +33,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -459.0
-offset_top = -149.0
-offset_right = 497.0
-offset_bottom = 163.0
+offset_left = -580.0
+offset_top = -327.0
+offset_right = 376.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Hearts" type="Sprite2D" parent="PlayerHealth"]
+position = Vector2(-0.76, -0.498)
+scale = Vector2(444.76, 160.498)
+texture = SubResource("ImageTexture_4ydfs")
+hframes = 33
+vframes = 20
+frame = 8
 
 [node name="Money" type="Control" parent="."]
 layout_mode = 3
@@ -31,17 +54,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Icon" type="Sprite2D" parent="Money"]
-position = Vector2(358.848, 282.5)
-scale = Vector2(213.846, 271)
-texture = ExtResource("2_sbf4o")
-offset = Vector2(5, 0)
-
 [node name="Coins" type="Label" parent="Money"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 572.0
-offset_right = 85.0
-offset_bottom = 620.0
+offset_left = 116.0
+offset_top = 561.0
+offset_right = 206.0
+offset_bottom = 637.0
 text = "000"
 label_settings = SubResource("LabelSettings_vh4sm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Money"]
+position = Vector2(71.625, 599.75)
+scale = Vector2(6.63235, 6.96875)
+sprite_frames = SubResource("SpriteFrames_83dy0")

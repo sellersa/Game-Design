@@ -380,8 +380,9 @@ animations = [{
 radius = 8.0
 height = 24.0
 
-[node name="td_player" type="CharacterBody2D"]
+[node name="td_player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_f0dfw")
+data = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7v30r")

@@ -1,0 +1,14 @@
+[remap]
+
+importer="image"
+type="Image"
+uid="uid://bqyyaiqgjx8hl"
+path="res://.godot/imported/try.png-dc1751a867c8d3ceb384d2bfdddef548.image"
+
+[deps]
+
+source_file="res://assets/sprites/zelda_like/try.png"
+dest_files=["res://.godot/imported/try.png-dc1751a867c8d3ceb384d2bfdddef548.image"]
+
+[params]
+

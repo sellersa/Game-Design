@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch42xmhp2207h"]
+[gd_scene load_steps=10 format=3 uid="uid://ch42xmhp2207h"]
 
 [ext_resource type="Texture2D" uid="uid://yjlepttjthnn" path="res://assets/sprites/zelda_like/Overworld.png" id="1_5vl6h"]
 [ext_resource type="PackedScene" uid="uid://uespjv0jjgsy" path="res://td_player.tscn" id="2_k465f"]
 [ext_resource type="PackedScene" uid="uid://7f5dr6nhxmdq" path="res://entities/mini_coin.tscn" id="3_ji3bj"]
 [ext_resource type="PackedScene" uid="uid://p4oqh7kmc1xa" path="res://entities/mini_heart.tscn" id="4_vgb6t"]
 [ext_resource type="PackedScene" uid="uid://difyrulled14p" path="res://td_enemy.tscn" id="5_6dx8y"]
+[ext_resource type="PackedScene" uid="uid://btnd6hqummmkm" path="res://change_lvl.tscn" id="6_3svwr"]
+[ext_resource type="PackedScene" uid="uid://dkftcpjims5th" path="res://player_hud.tscn" id="7_3px8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oy0sx"]
 texture = ExtResource("1_5vl6h")
@@ -3191,7 +3193,7 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-524279, 1441792, 9)
 
-[node name="td_player" parent="." instance=ExtResource("2_k465f")]
+[node name="td_player" parent="." groups=["Player"] instance=ExtResource("2_k465f")]
 position = Vector2(6, -162)
 
 [node name="mini_coin" parent="." instance=ExtResource("3_ji3bj")]
@@ -3202,3 +3204,18 @@ position = Vector2(15, -108)
 
 [node name="td_enemy" parent="." instance=ExtResource("5_6dx8y")]
 position = Vector2(-79, 134)
+
+[node name="change_lvl" parent="." instance=ExtResource("6_3svwr")]
+position = Vector2(97, 96)
+next_level = "td_world_2"
+
+[node name="CollisionShape2D" parent="change_lvl" index="0"]
+position = Vector2(15.5, 133)
+
+[node name="Sprite2D" parent="change_lvl" index="1"]
+position = Vector2(16.5, 142)
+scale = Vector2(253, 63)
+
+[node name="player_hud" parent="." instance=ExtResource("7_3px8a")]
+
+[editable path="change_lvl"]
