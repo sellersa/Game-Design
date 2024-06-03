@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq5dvtm2xosn7"]
+
+[ext_resource type="Script" path="res://fp_checkpoint.gd" id="1_nevdf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s2x76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0ow1"]
+size = Vector2(1.33333, 1.33333)
+
+[node name="fp_checkpoint" type="Sprite2D"]
+position = Vector2(4.76837e-07, -1.19209e-07)
+scale = Vector2(4.5, 4.5)
+texture = SubResource("PlaceholderTexture2D_s2x76")
+script = ExtResource("1_nevdf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.05964e-07, 1.32455e-08)
+shape = SubResource("RectangleShape2D_k0ow1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

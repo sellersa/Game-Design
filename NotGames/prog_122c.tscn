@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtb3i01s3hshp"]
+
+[ext_resource type="Script" path="res://NotGames/Prog122c.gd" id="1_wkn4a"]
+
+[node name="Prog122c" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wkn4a")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 72.0
+offset_right = 984.0
+offset_bottom = 336.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 432.0
+offset_right = 344.0
+offset_bottom = 592.0
+text = "Calculate"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 408.0
+offset_top = 432.0
+offset_right = 712.0
+offset_bottom = 592.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 792.0
+offset_top = 432.0
+offset_right = 1096.0
+offset_bottom = 592.0
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

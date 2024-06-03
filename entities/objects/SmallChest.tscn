@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhof3tqge48lv"]
+
+[ext_resource type="Script" path="res://entities/objects/SmallChest.gd" id="1_5rsto"]
+[ext_resource type="Texture2D" uid="uid://ec2wlgmugih4" path="res://assets/sprites/zelda_like/objects.png" id="2_2xksg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bq2ab"]
+size = Vector2(23.75, 21.4375)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_csd5m"]
+
+[node name="SmallChest" type="Node2D" groups=["Chest", "Interactable"]]
+script = ExtResource("1_5rsto")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, 0)
+scale = Vector2(1.00568, 1.00312)
+texture = ExtResource("2_2xksg")
+hframes = 37
+vframes = 22
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_bq2ab")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_csd5m")

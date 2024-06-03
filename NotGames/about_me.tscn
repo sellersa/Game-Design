@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnpovavowy5xi"]
+
+[ext_resource type="Script" path="res://NotGames/about_me.gd" id="1_3s6ym"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cjudy"]
+font_size = 30
+
+[node name="about_me" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3s6ym")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.014
+anchor_bottom = 0.679
+offset_left = 232.0
+offset_top = 93.0
+offset_right = -248.128
+offset_bottom = -50.992
+label_settings = SubResource("LabelSettings_cjudy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 512.0
+offset_right = 320.0
+offset_bottom = 624.0
+text = "Calculate"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 624.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 512.0
+offset_right = 1080.0
+offset_bottom = 624.0
+text = "Close"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

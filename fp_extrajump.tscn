@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://0rmtdq871qsg"]
+
+[ext_resource type="Script" path="res://fp_extrajump.gd" id="1_cxnvm"]
+[ext_resource type="Texture2D" uid="uid://d0ycwqeolsgo" path="res://assets/sprites/coin.png" id="1_nbyem"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtb43"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nbyem")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oprap"]
+radius = 4.0
+
+[node name="fp_extrajump" type="Node2D"]
+script = ExtResource("1_cxnvm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.249999, 0.374997)
+scale = Vector2(0.029, 0.0295)
+sprite_frames = SubResource("SpriteFrames_vtb43")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_oprap")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

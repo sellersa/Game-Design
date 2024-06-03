@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://7boq1airl8dy"]
+
+[ext_resource type="Script" path="res://Move.gd" id="1_x5w3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1onux"]
+size = Vector2(2464, 74.5)
+
+[node name="Move" type="Area2D" groups=["Spawn"]]
+script = ExtResource("1_x5w3i")
+thisnumbers = Vector2(-60, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(279, 165)
+shape = SubResource("RectangleShape2D_1onux")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
