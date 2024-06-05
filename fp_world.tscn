@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://nufgvyvnxx1m"]
+[gd_scene load_steps=17 format=3 uid="uid://nufgvyvnxx1m"]
 
 [ext_resource type="Texture2D" uid="uid://dqlawcmq8jasr" path="res://assets/sprites/Tiles.png" id="2_55eng"]
 [ext_resource type="Script" path="res://Movingground.gd" id="3_8gx1s"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://7boq1airl8dy" path="res://move.tscn" id="5_ipwmf"]
 [ext_resource type="PackedScene" uid="uid://bq5dvtm2xosn7" path="res://fp_checkpoint.tscn" id="6_2x3qs"]
 [ext_resource type="PackedScene" uid="uid://0rmtdq871qsg" path="res://fp_extrajump.tscn" id="6_qpkh5"]
+[ext_resource type="Texture2D" uid="uid://cu672driyh5c4" path="res://assets/sprites/images.png" id="7_cavej"]
 [ext_resource type="PackedScene" uid="uid://btnd6hqummmkm" path="res://TopDownGame/change_lvl.tscn" id="8_6qu4c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofj7k"]
@@ -10376,8 +10377,9 @@ position = Vector2(659.25, 47)
 shape = SubResource("RectangleShape2D_7i0y5")
 
 [node name="fp_checkpoint" parent="." instance=ExtResource("6_2x3qs")]
-position = Vector2(340, 14)
-scale = Vector2(5.49994, 5.125)
+position = Vector2(336.375, 16.625)
+scale = Vector2(0.0266496, 0.0283203)
+texture = ExtResource("7_cavej")
 
 [node name="fp_extrajump2" parent="." instance=ExtResource("6_qpkh5")]
 position = Vector2(-15, -202)
